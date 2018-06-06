@@ -54,6 +54,7 @@ public class userModule
             PreparedStatement prest = dbcon.PreparedStatement(sql);
             prest.setString(1,user);
             ResultSet rs=prest.executeQuery();
+            rs.next();
             return rs.getInt("auth");
         }
         catch (Exception e)

@@ -8,8 +8,16 @@
         <li>
             <a href="#">新闻发布</a>
         </li>
+        <%if (Integer.parseInt(session.getAttribute("auth").toString())>90) {%>
         <li>
             <a href="#">新闻发布管理</a>
         </li>
+        <li>
+            <a href="#">评论管理</a>
+        </li>
+        <li>
+            <a href="#">用户管理</a>
+        </li>
+        <%}%>
     </ul>
 </li>

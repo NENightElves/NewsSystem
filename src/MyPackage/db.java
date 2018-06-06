@@ -29,12 +29,12 @@ public class db
     }
     public int executeUpdate(String sql) throws SQLException
     {
-        stateMent = dbConn.createStatement();
+        stateMent = dbConn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
         return stateMent.executeUpdate(sql);
     }
     public ResultSet executeQuery(String sql) throws SQLException
     {
-        stateMent=dbConn.createStatement();
+        stateMent=dbConn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
         return stateMent.executeQuery(sql);
     }
     public void closeConn() throws SQLException
@@ -44,7 +44,7 @@ public class db
     }
     public PreparedStatement PreparedStatement(String sql) throws SQLException
     {
-        return  dbConn.prepareStatement(sql);
+        return  dbConn.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
     }
 
 }

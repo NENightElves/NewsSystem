@@ -10,18 +10,8 @@
 </head>
 
 <body>
-    <%
-        if (session.getAttribute("msg")!=null)
-        {
-            int x=Integer.parseInt(session.getAttribute("msg").toString());
-            if (x==11) %><script>alert("用户名不存在")</script><%
-            if (x==12) %><script>alert("密码错误")</script><%
-            if (x==21) %><script>alert("用户名已存在")</script><%
-            if (x==20) %><script>alert("注册成功")</script><%
-        }
-    %>
     <%@include file="nav.jsp" %>
-
+    <%@include file="news.jsp"%>
 </body>
 
 </html>
