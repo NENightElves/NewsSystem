@@ -6,17 +6,20 @@
     </a>
     <ul class="dropdown-menu">
         <li>
-            <a href="#">新闻发布</a>
+            <a href="newspublish.jsp">新闻发布</a>
+        </li>
+        <li>
+            <a href="newsupdate.jsp">新闻修改</a>
         </li>
         <%if (Integer.parseInt(session.getAttribute("auth").toString())>90) {%>
         <li>
-            <a href="#">新闻发布管理</a>
+            <a href="newspublishmanagement.jsp">新闻发布管理</a>
         </li>
         <li>
-            <a href="#">评论管理</a>
+            <a href="commentmanagement.jsp">评论管理</a>
         </li>
         <li>
-            <a href="#">用户管理</a>
+            <a href="usermanagement.jsp">用户管理</a>
         </li>
         <%}%>
     </ul>

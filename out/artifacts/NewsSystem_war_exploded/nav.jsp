@@ -38,14 +38,20 @@
                 <%}%>
             </ul>
             <form class="navbar-form navbar-right" action="LoginAction.jsp" method="post">
-                <input id="flag" name="flag" type="hidden">
-                <% if (session.getAttribute("usr")==null) {%>
-                    <jsp:include page="login.jsp"/>
-                <%}else{%>
-                    <label>欢迎&nbsp;<%=session.getAttribute("usr")%></label>
-                    <input type="button" class="btn btn-default" value="退出" onclick="document.getElementById('flag').value=3;this.form.submit()">
-                <%}%>
+                <div class="form-group">
+                    <input id="flag" name="flag" type="hidden">
+                    <% if (session.getAttribute("usr")==null) {%>
+                       <jsp:include page="login.jsp"/>
+                    <%}else{%>
+                        <label>欢迎&nbsp;<%=session.getAttribute("usr")%></label>
+                        <input type="button" class="btn btn-default" value="退出" onclick="document.getElementById('flag').value=3;this.form.submit()">
+                    <%}%>
+                </div>
             </form>
+            <div class="navbar-form navbar-right form-group">
+                <input type="text" class="form-control" placeholder="搜索" name="searchtext" id="searchtext">
+                <button class="btn btn-info" onclick="var strr='index.jsp?title=';strr+=$('#searchtext').val();window.location.href=strr">搜索</button>
+            </div>
         </div>
     </div>
 </nav>

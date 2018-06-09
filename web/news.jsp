@@ -11,10 +11,12 @@
     <div class="jumbotron">
         <%
             String[][] str;
-            if (request.getParameter("category")!=null) str=newsManagement.getNews(Integer.parseInt(request.getParameter("category"))); else str=newsManagement.getNews();
+            if (request.getParameter("category")!=null) str=newsManagement.getNews(Integer.parseInt(request.getParameter("category")));
+            else if (request.getParameter("title")!=null) str=newsManagement.getNews(request.getParameter("title"));
+            else str=newsManagement.getNews();
             for(int i=0;i<str.length;i++)
             {%>
-                <a class="btn btn-default btn-block" style="text-align: left" href="<%=str[i][0]%>"><%=str[i][1]%><label style="float: right"><small><%=str[i][2]%></small></label></a>
+                <a class="btn btn-default btn-block" style="text-align: left" href="shownews.jsp?name=<%=str[i][2]%>"><%=str[i][1]%><label style="float: right"><small><%=str[i][2]%></small></label></a>
             <%}
         %>
     </div>
