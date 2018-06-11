@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <%@include file="checkauth90.jsp"%>
     <%@include file="nav.jsp"%>
     <%
         if (request.getParameter("del")!=null) newsManagement.delUser(request.getParameter("del"));

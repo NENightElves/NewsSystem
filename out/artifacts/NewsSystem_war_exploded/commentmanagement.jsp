@@ -12,6 +12,7 @@
     <title>评论管理</title>
 </head>
 <body>
+<%@include file="checkauth90.jsp"%>
 <%@include file="nav.jsp"%>
 <%
     if (request.getParameter("del")!=null) newsManagement.delComments(request.getParameter("del"));

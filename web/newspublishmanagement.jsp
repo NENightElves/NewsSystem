@@ -13,7 +13,7 @@
     <title>新闻修改</title>
 </head>
 <body>
-<%@include file="checkauth20.jsp"%>
+<%@include file="checkauth90.jsp"%>
 <%@include file="nav.jsp"%>
 <%
     if (request.getParameter("name")!=null)
